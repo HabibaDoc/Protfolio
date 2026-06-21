@@ -241,7 +241,7 @@ p { margin: 0; text-wrap: pretty; }
   font-weight: 600;
   color: var(--blue-deep);
 }
-.hero .lede { margin-top: 18px; font-size: 17px; color: var(--muted); max-width: 520px; }
+.hero .lede { margin-top: 18px; font-size: 17px; color: var(--muted); max-width: 520px; text-align: justify; }
 .hero .actions { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
 .hero .trust {
   margin-top: 38px;
@@ -581,4 +581,68 @@ img.about-photo { display: block; width: 100%; height: auto; aspect-ratio: 5 / 6
   html { scroll-behavior: auto; }
   .rv { opacity: 1 !important; transform: none !important; transition: none; }
   * { animation: none !important; }
+}
+
+/* ─── mobile optimization ─── */
+@media (max-width: 600px) {
+  :root { --pad: 18px; --r: 16px; --r-lg: 22px; }
+  .sec { padding: 64px 0; }
+  .sec-head { margin-bottom: 38px; }
+
+  /* hero */
+  .hero .wrap { gap: 32px; padding-top: 30px; padding-bottom: 44px; }
+  .portrait-wrap { max-width: 320px; }
+  .hero h1 { margin-top: 18px; }
+  .hero .lede { text-align: left; font-size: 16px; }
+  .hero .actions { gap: 10px; }
+  .hero .actions .btn { flex: 1 1 auto; justify-content: center; }
+  .hero .trust { gap: 18px 26px; margin-top: 28px; padding-top: 20px; }
+  .hero .trust .ti b { font-size: 21px; }
+
+  /* badges: move clear of the face, onto the coat */
+  .badge-card { padding: 9px 12px; gap: 9px; border-radius: 13px; }
+  .badge-card .bi { width: 32px; height: 32px; border-radius: 9px; }
+  .badge-card .bi svg { width: 16px; height: 16px; }
+  .badge-card .bi .cross { width: 15px; height: 15px; }
+  .badge-card b { font-size: 12.5px; }
+  .badge-card span { font-size: 10.5px; }
+  .badge-card.tl { top: auto; bottom: 78px; left: -6px; right: auto; }
+  .badge-card.br { bottom: 14px; right: -6px; }
+  .portrait-dots { width: 84px; height: 84px; right: -10px; bottom: 24px; }
+
+  /* about */
+  .about-media { max-width: 340px; }
+  .about-media .exp { left: -10px; bottom: -16px; padding: 16px 18px; max-width: 180px; border-radius: 16px; }
+  .about-media .exp b { font-size: 27px; }
+  .about-media .exp span { font-size: 12px; }
+  .about-body p { text-align: left; font-size: 15.5px; }
+  .about-sign { gap: 16px; }
+  .about-sign .btn { width: 100%; justify-content: center; }
+  .sign-name { font-size: 34px; }
+
+  /* focus / cards */
+  .fcard { padding: 24px 22px; }
+  .fcard p { text-align: left; }
+
+  /* stats */
+  .stats .wrap { padding: 44px var(--pad); }
+
+  /* education */
+  .ecard { padding: 22px 20px; gap: 16px; }
+  .ecard .yr { min-width: 64px; padding: 12px 10px; }
+
+  /* contact */
+  .contact .wrap { gap: 36px; }
+  .form-card { padding: 26px 22px; }
+  .cc { padding: 14px 15px; }
+  .cc .v { font-size: 15px; word-break: break-word; }
+
+  /* footer */
+  .foot .wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 26px var(--pad); }
+}
+
+@media (max-width: 380px) {
+  .topbar .left { gap: 14px; font-size: 12px; }
+  .hero h1 { font-size: 36px; }
+  .badge-card.tl b { font-size: 12px; }
 }
